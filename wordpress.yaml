@@ -1,6 +1,6 @@
 ---
 - name: Install wordpress on CentOS 7
-  host: localhosts
+  host: localhost
   become: yes 
   become_method: sudo
   gather_facts: no
