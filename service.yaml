@@ -1,9 +1,9 @@
 ---
 - hosts: localhost
   task:   
-    - name: Install 1 package
-      packages:
+    - name: start specific service
+      service:
        name: httpd 
-       state: present 
+       state: restarted
       become: yes
      become_method: sudo 
