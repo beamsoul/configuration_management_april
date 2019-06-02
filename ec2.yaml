@@ -1,7 +1,7 @@
----
+---  #sudo pip install boto
 - name: Create ec2 instances
   hosts : localhost
-  task: 
+  tasks: 
 - name: Create instance
   ec2: 
   key_name: winohio
