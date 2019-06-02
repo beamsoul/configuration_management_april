@@ -7,8 +7,11 @@
    - name: DESTINATION
      prompt: "Give me the location to put: "
      private: no
-   
-  hosts: all 
+   - name: HOST
+     prompt: "Which host?"
+     private: no
+
+  hosts: "{{HOST}}"
   
   become: yes
   become_method: sudo
