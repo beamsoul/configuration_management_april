@@ -2,11 +2,11 @@
 - name: Create ec2 instances
   hosts : localhost
   tasks: 
-- name: Create instance
-  ec2: 
-    key_name: winohio
-    instance_type: t2.medium 
-    image: ami-0f2b4fc905b0bd1f1
-    count: 3
-    vpc_subnet_id: subnet-936664fb
-    region: us-east-2
+  - name: Create instance
+    ec2: 
+      key_name: winohio
+      instance_type: t2.medium 
+      image: ami-0f2b4fc905b0bd1f1
+      count: 3
+      vpc_subnet_id: subnet-936664fb
+      region: us-east-2
