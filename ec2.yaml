@@ -7,5 +7,6 @@
     key_name: winohio
     instance_type: t2.medium 
     image: ami-0f2b4fc905b0bd1f1
-    count: 1
+    count: 3
     vpc_subnet_id: subnet-936664fb
+    region: us-east-2
