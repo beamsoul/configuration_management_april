@@ -4,6 +4,6 @@
     - name: start specific service
       service:
        name: httpd 
-       state: status httpd.service restart
+       state: restarted
       become: yes
       become_method: sudo 
