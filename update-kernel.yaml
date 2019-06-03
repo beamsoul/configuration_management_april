@@ -1,6 +1,6 @@
 ---
   - hosts: localhost
-    task:   
+    tasks:   
     - name: update kernel to latest
       when: ansible_distribution == "Cent0S"  and ansible_distribution_major_version =="7"
       package:
