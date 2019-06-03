@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  task:   
+  tasks:   
     - name: start specific service
       service:
        name: httpd 
