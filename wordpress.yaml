@@ -1,73 +1,56 @@
 ---
-- name: Installs wordpress
-  hosts: web
-  become: yes
-  become_method: sudo
-  tasks:
-    - name: Install necessary packages
-      package:
-        name: "{{item}}"
-        state: latest
-      with_items:
-        - wget 
-        - unzip
-        - php-gd
-        - httpd 
-        - mysql 
-        - mariadb-server
-        - php 
-        - php-mysql 
-        - php-fpm
-      ignore_errors: true
-    
-    - name: install epel-release
-      shell: "yum install epel-release -y"
-      become: yes
-      become_method: sudo
-    - name: install repo
-      shell: "wget -q http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      become: yes
-      become_method: sudo
-    - name: config manager enabled
-      shell: "yum-config-manager --enable remi-php70" 
-      become: yes
-      become_method: sudo
-    - name: update httpd PHP
-      shell: "yum update httpd php php-mysql mysql -y"
-      become: yes
-      become_method: sudo
-    - name: restart httpd
-      shell: "service httpd restart"
-      become: yes
-      become_method: sudo
-    - name: httpd enable
-      shell: "chkconfig httpd on"
-      become: yes
-      become_method: sudo
+ - name : Installs wordpress
+   hosts: web_server
+   become : yes
+   become_method : sudo 
+   tasks:
+     - name : Install necessary packages
+       package: 
+         name : "{{item}}"
+         state: latest
+       with_items: 
+          - wget
+          - unzip
+          - httpd
+          - php 
+          - php-gd
+          - mysql
+          - mariadb-server
+          - php-mysql
+          - php-fpm 
+       ignore_errors: true 
+     - name : install epel-release
+       shell: "sudo wget -q http://rpms.remirepo.net/enterprise/remi-release-7.rpm "
+     - name : config manager enabled
+       shell: "sudo yum-config-manager --enable remi-php70"
+     - name : update httpd PHP 
+       shell: "sudo yum update httpd php php-mysql mysql"
+     
 
-    - name: Download wordpress package
-      get_url:
-        url: "https://wordpress.org/latest.tar.gz"
-        dest: /tmp/ 
+     - name: Download wordpress package
+       get_url: 
+          url: "https://wordpress.org/latest.tar.gz"
+          dest: /tmp/
 
-    - name: Unzip wordpress file
-      unarchive: 
-        src: "/tmp/wordpress-5.2.1.tar.gz"
-        dest: /var/www/html/
-        remote_src: yes
-      become: yes
-      become_method: sudo
+     - name: Unzip wordpress file
+       unarchive: 
+         src: "/tmp/wordpress-5.2.1.tar.gz"
+         dest: "/var/www/html/"
+         remote_src: yes 
+       become: yes
+       become_method: sudo 
 
-    - name: Move files to html folder
-      shell: "mv /var/www/html/wordpress/* /var/www/html"
-      become: yes
-      become_method: sudo
-      ignore_errors: yes
+     - name :  Move files to html folder
+       shell: "mv /var/www/html/wordpress/*  /var/www/html/"
+       become: yes
+       become_method: sudo 
+       ignore_errors: yes
 
-    - name: Start httpd
-      systemd:
-        name: httpd
-        state: started
-        enabled: yes
-      become: yes
-      become_method: sudo
+
+     - name: restart httpd
+       systemd: 
+         name: httpd
+         state: restarted
+         enabled: yes
+       become: yes
+       become_method: sudo 
