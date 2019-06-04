@@ -1,8 +1,11 @@
-
+---
+- name: 
+  hosts: localhost
+  tasks:
     - name: Create Ubuntu-16.04
       ec2:
         aws_region: us-east-2
-        image: ami-0d535dd013b4e7e60)
+        image: ami-0d535dd013b4e7e60
         instance_type: t2.micro
         instance_tags:
           Name: Ubuntu
