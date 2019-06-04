@@ -8,8 +8,8 @@
        state: latest
       become: yes
       become_method: sudo 
-    - name: Restart the system 
-      #reboot:
+    - #name: Restart the system 
+      
 
 
     
