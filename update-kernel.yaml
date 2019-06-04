@@ -1,5 +1,5 @@
 ---
-  - hosts: localhost
+  - hosts: Kernel
     tasks:   
     - name: update kernel to latest
       when: ansible_distribution == "Cent0S"
@@ -8,7 +8,9 @@
        state: latest
       become: yes
       become_method: sudo 
-    - #name: Restart the system 
+    - name: restart the system 
+      when: ansible_distribution == "Cent0S"
+      reboot:
       
 
 
