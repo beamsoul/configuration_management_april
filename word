@@ -27,6 +27,7 @@
        shell: "sudo yum-config-manager --enable remi-php56"
      - name : update httpd PHP 
        shell: "sudo yum update httpd php php-mysql mysql"
+       
      
 
      - name: Download wordpress package
