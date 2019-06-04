@@ -1,8 +1,8 @@
 ---   
 - hosts: Kernel 
-    become: yes
-    become_method: sudo 
-    tasks:
+  become: yes
+  become_method: sudo 
+  tasks:
       - name: latest kernel update
         when: ansible_distrubution == "CentOS"
         package:
