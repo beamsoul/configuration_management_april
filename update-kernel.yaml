@@ -1,13 +1,14 @@
 ---
   - hosts: Kernel
+    become: yes
+    become_method: sudo
     tasks:   
     - name: update kernel to latest
       when: ansible_distribution == "Cent0S"
       package:
        name: kernel
        state: latest
-      become: yes
-      become_method: sudo 
+       
     - name: restart the system 
       when: ansible_distribution == "Cent0S"
       reboot:
