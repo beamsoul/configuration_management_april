@@ -2,16 +2,16 @@
 - name: 
   hosts: localhost
   tasks:
-    - name: Create Ubuntu-16.04
+    - name: Create Ubuntu
       ec2:
         aws_region: us-east-2
         image: ami-0d535dd013b4e7e60
         instance_type: t2.micro
         instance_tags:
-          Name: Ubuntu
+          Name: Ubuntu-16.04
         count: 1
         wait: yes
-        vpc_subnet_id: vpc-7aa3b812
+        vpc_subnet_id: subnet-29298965
         assign_public_ip: yes
         user_data: |
                    #!/bin/sh
@@ -20,7 +20,7 @@
 
 
 
-    - name: Creating  Debian GNU-Linux 9
+    - name: Creating  Debian 
       ec2:
         aws_region: us-east-2
         image: ami-067e80109aff3e2c2
@@ -29,7 +29,7 @@
           Name: Debian GNU-Linux 9
         count: 1
         wait: yes
-        vpc_subnet_id: vpc-7aa3b812
+        vpc_subnet_id: subnet-09641c73
         assign_public_ip: yes
         user_data: |
                    #!/bin/sh
