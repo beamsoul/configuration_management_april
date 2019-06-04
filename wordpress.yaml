@@ -2,7 +2,13 @@
  - name : Installs wordpress
    hosts: web_server
    become : yes
-   become_method : sudo 
+   become_method : sudo    
+ - name: Install yum utils
+   package:
+    name:
+    - yum-utils
+    - "@Development tools"
+    lock_timeout: 180
    tasks:
      - name : Install necessary packages
        package: 
