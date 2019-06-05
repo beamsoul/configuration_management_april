@@ -1,0 +1,6 @@
+key_name:                  "ansibletower-sshkey"
+instance_type:             "t2-micro"
+image:                      "ami-0f2b4fc905b0bd1f1"
+count:                      "3"
+vpc_subnet_id:              "subnet-29298965"
+region:                     "us-east-2"
