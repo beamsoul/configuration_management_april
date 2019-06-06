@@ -13,7 +13,8 @@
     - name:  Install r1soft agent 
       package: 
         name: serverbackup-enterprise-agent 
-        state: latest      
+        state: latest   
+      notify: R1SOFT_INSTALLED   
 
 
     - name: Start agent 
@@ -23,7 +24,15 @@
        
     - name: Get key
       shell: "r1soft-setup --get-key http://r1soft.acirrustech.com"     
-      when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
+      when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+
+
+  handlers: 
+    - name: R1SOFT_INSTALLED_ON_CENTOS_7
+      systemd:
+       name: sbm-agent 
+       state: restarted 
+
         
 
 
@@ -50,3 +59,5 @@
       shell: "r1soft-setup --get-key http://r1soft.acirrustech.com"     
       when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
         
+
+
