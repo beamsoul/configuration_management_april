@@ -29,11 +29,11 @@
 
 
     #this line is for centos6
-        - block: 
-          - name: Create Repository
-            copy:
-            src: r1soft.repo
-            dest: /etc/yum.repos.d/r1soft.repo  
+    - block: 
+       - name: Create Repository
+         copy:
+           src: r1soft.repo
+           dest: /etc/yum.repos.d/r1soft.repo  
 
     - name:  Install r1soft agent 
       package: 
