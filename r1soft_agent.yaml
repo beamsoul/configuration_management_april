@@ -7,8 +7,8 @@
     - block: 
       - name: Create Repository
         copy:
-         src: r1soft.repo
-         dest: /etc/yum.repos.d/r1soft.repo  
+          src: r1soft.repo
+          dest: /etc/yum.repos.d/r1soft.repo  
 
     - name:  Install r1soft agent 
       package: 
@@ -23,5 +23,5 @@
        
     - name: Get key
       shell: "r1soft-setup --get-key http://r1soft.acirrustech.com"     
-  when: ansible_distribution == "CentOS  
+    when: ansible_distribution == "CentOS  
         
