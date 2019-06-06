@@ -1,5 +1,5 @@
 ---
-- name: installs r1soft agent 
+- name: Installs r1soft agent 
   hosts: target
   become: yes
   become_method: sudo
