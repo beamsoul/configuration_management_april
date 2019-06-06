@@ -27,12 +27,6 @@
       when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
 
 
-  handlers: 
-    - name: R1SOFT_INSTALLED_ON_CENTOS_7
-      systemd:
-       name: sbm-agent 
-       state: restarted 
-
         
 
 
@@ -47,7 +41,8 @@
     - name:  Install r1soft agent 
       package: 
         name: serverbackup-enterprise-agent 
-        state: latest      
+        state: latest 
+        notify: R1SOFT_INSTALLED_ON_CENTOS_6     
 
 
     - name: Start agent 
@@ -61,3 +56,13 @@
         
 
 
+
+  handlers: 
+    - name: R1SOFT_INSTALLED_ON_CENTOS_7
+      systemd:
+       name: sbm-agent 
+       state: restarted 
+    - name: R1SOFT_INSTALLED_ON_CENTOS_7
+      systemd: 
+        name: cdp
+        state: restarted   
