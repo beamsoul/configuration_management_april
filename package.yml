@@ -1,9 +1,10 @@
 ---
-- hosts: localhost
+- name: Installs 1 packages
+  hosts: all
   tasks:
     - name: install 1 package
       package:
         name: httpd
-        state: latest
+        state: present 
       become: yes
       become_method: sudo
