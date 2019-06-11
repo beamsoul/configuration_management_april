@@ -1,15 +1,15 @@
 ---  #sudo pip install boto
-- name: Create ec2 instances
+- name: Creates ec2 instances
   hosts : localhost
   vars_files:
     - ec2_vars
   tasks: 
-  - name: Creates Centos7
+  - name: Creates CentOS 7 VM
     ec2: 
       key_name: "{{key_name}}"
       instance_type: "{{instance_type}}"
       image: "{{centos7_image}}"
-      count: "{count}"
+      count: "{{count}}"
       vpc_subnet_id: "{{vpc_subnet_id}}"
       region: "{{region}}"
       assign_public_ip: yes
@@ -20,7 +20,7 @@
       key_name: "{{key_name}}"
       instance: "{{instance_type}}"
       image: "{{centos6_image}}"
-      count: "{count}"
+      count: "{{count}}"
       vpc_subnet_id: "{{vpc_subnet_id}}"
       region: "{{region}}"
       assign_public_ip: yes
