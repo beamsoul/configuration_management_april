@@ -3,7 +3,8 @@ instance_type: "t2.micro"
 count: "4"
 vpc_subnet_id: "subnet-0cd49c50"
 region: "us-east-1"
+group_id "sg-055e390868712a61c"
 
 
+centos7_image: "ami-02eac2c0129f6376b"
 centos6_image: "ami-05761660"
-cenots7_image: "34.204.3.190"
