@@ -4,7 +4,7 @@
   vars_files:
     - ec2_vars
   tasks: 
-  - name: Creates CentOS 7 VM
+  - name: Creates Centos7
     ec2: 
       key_name: "{{key_name}}"
       instance_type: "{{instance_type}}"
