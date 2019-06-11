@@ -6,5 +6,6 @@ region: "us-east-1"
 group_id "sg-055e390868712a61c"
 
 
+
 centos7_image: "ami-02eac2c0129f6376b"
 centos6_image: "ami-05761660"
