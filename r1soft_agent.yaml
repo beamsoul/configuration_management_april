@@ -16,7 +16,7 @@
           package: 
             name: serverbackup-enterprise-agent
             state: present
-          notify: r1soft_INSTALLED
+          notify: R1SOFT-INSTALLED_ON_CENTOS_7
 
         - name: get key
           shell: "r1soft-setup --get-key http://r1soft.acirrustech.com"
@@ -36,7 +36,7 @@
           package: 
             name: serverbackup-enterprise-agent
             state: present
-          notify: r1soft_INSTALLED
+          notify: r1soft_INSTALLED_ON_CENTOS_6
 
         - name: start agent
           service: 
