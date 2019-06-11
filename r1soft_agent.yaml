@@ -18,14 +18,16 @@
             state: present
           notify: R1SOFT-INSTALLED_ON_CENTOS_7
 
-        - name: get key
-          shell: "r1soft-setup --get-key http://r1soft.acirrustech.com"
-        when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+        - name: restart r1soft server
+          shell: "/etc/init.d/cdp-server restart"
 
-
-
-      
-# this line is for centos 6    
+        handlers:
+        - name:  R1SOFT_INSTALLED_ON_CENTOS_7
+          systemd:
+           
+        
+        
+        # this line is for centos 6    
       - block:
         - name: create r1soft
           copy: 
@@ -36,7 +38,7 @@
           package: 
             name: serverbackup-enterprise-agent
             state: present
-          notify: r1soft_INSTALLED_ON_CENTOS_6
+          notify: r1soft_INSTALLED_ON
 
         - name: start agent
           service: 
