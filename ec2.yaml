@@ -8,7 +8,7 @@
     ec2: 
       key_name: "{{key_name}}"
       instance_type: "{{instance_type}}"
-      centos7_image: "{{centos7_image}}"
+      image: "{{centos7_image}}"
       count: "{{count}}"
       vpc_subnet_id: "{{vpc_subnet_id}}"
       region: "{{region}}"
@@ -18,7 +18,7 @@
     ec2:
       key_name: "{{key_name}}"
       instance_type: "{{instance_type}}"
-      centos6_image: "{{centos6_image}}"
+      image: "{{centos6_image}}"
       count: "{{count}}"
       vpc_subnet_id: "{{vpc_subnet_id}}"
       region: "{{region}}"
