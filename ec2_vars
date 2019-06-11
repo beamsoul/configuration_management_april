@@ -1,10 +1,8 @@
 key_name: "ansible-tower-key-virg"
 instance_type: "t2.micro"
-count: "2"
+count: "4"
 vpc_subnet_id: "subnet-0cd49c50"
 region: "us-east-1"
 
 
 centos6_image: "ami-05761660"
-centos7_image: "ami-014b38e758721be30"
-fedora_image:  "ami-02eac2c0129f6376b"
