@@ -1,6 +1,6 @@
 ---
   - name: Installs r1soft agent
-    hosts: target
+    hosts: backups
     become: yes
     become_method: sudo
     tasks:

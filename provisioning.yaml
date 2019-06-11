@@ -1,0 +1,17 @@
+---
+- name: Provision ec2 instance
+  hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - name: Ping
+      ping:
+
+
+- name: Install r1soft
+  import_playbook: "/home/centos/configuration_management/r1_soft/r1soft_agent.yaml"
+- name: Install nagiosxi
+  import_playbook: "/home/centos/configuration_management/nagios/nagiosxi_agent.yaml"
+- name: Install filebeat
+  import_playbook: "/home/centos/configuration_management/filebeat.yaml"
+© 2019 GitHub, Inc.

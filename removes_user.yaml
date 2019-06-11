@@ -1,0 +1,11 @@
+---
+- name: Removes user
+  hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - name: Remove 1 user
+      user:
+        name: "{{user}}"
+        state: absent
+        remove: yes
