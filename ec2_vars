@@ -6,3 +6,4 @@ region: "us-east-1"
 
 
 centos6_image: "ami-05761660"
+cenots7_image: "34.204.3.190"
