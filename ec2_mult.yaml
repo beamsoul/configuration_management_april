@@ -25,3 +25,4 @@
       group_id: "{{group_id}}"
       region: "{{region}}"
       assign_public_ip: yes
+      
