@@ -1,6 +1,6 @@
 ---  #sudo pip install boto
 - name: Create ec2 instances
-  hosts : localhosts
+  hosts : localhost
   vars_files:
     - ec2_vars
   tasks: 
