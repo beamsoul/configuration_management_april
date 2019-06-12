@@ -1,0 +1,9 @@
+---
+- name: IAM Create a role
+  hosts: localhost
+  
+  tasks:
+    - name: IAM add role
+      iam_role:
+        name: "{{name}}"                                              #Give a name to the role   Ex:MyNewRole
+        state: present

@@ -1,0 +1,10 @@
+---
+- name: Adds 1 group
+  hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - name: Add 1 group
+      group:
+        name: "{{group}}"
+        state: absent

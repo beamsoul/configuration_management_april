@@ -1,0 +1,13 @@
+---
+- name: Adds user
+  hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - name: Add 1 user
+      user:
+        user: "{{user}}"
+        state: present
+
+
+      
