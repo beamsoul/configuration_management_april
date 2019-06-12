@@ -4,11 +4,11 @@
   tasks:
     - name: Creates CentOS7 instance
       ec2:
-        key_name: user_ANSIBLE_TOWER      
+        key_name:     
         instance_type: t2.micro
-        image: ami-0f2b4fc905b0bd1f1
+        image: 
         count: 1
-        vpc_subnet_id: subnet-b22b54c8
+        vpc_subnet_id: 
         region: us-east-2
         instance_tags:
           Name: CentOS7
@@ -18,11 +18,11 @@
 
     - name: Creates Debian instance
       ec2:
-        key_name: user_ANSIBLE_TOWER      
+        key_name:    
         instance_type: t2.micro
-        image: ami-067e80109aff3e2c2
+        image: 
         count: 1
-        vpc_subnet_id: subnet-b22b54c8
+        vpc_subnet_id: 
         region: us-east-2
         instance_tags:
           Name: DEBIAN_GNU
@@ -36,11 +36,11 @@
 
     - name: Creates Ubuntu instance
       ec2:
-        key_name: user_ANSIBLE_TOWER      
+        key_name:   
         instance_type: t2.micro
-        image: ami-0d0b9ea2efef113f9
+        image: 
         count: 1
-        vpc_subnet_id: subnet-b22b54c8
+        vpc_subnet_id: 
         region: us-east-2
         instance_tags:
           Name: UBUNTU

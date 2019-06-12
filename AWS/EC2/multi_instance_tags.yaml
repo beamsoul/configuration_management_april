@@ -6,11 +6,11 @@
       ec2:
         aws_access_key: "{{ lookup('env','ACCESS_KEY') }}"
         aws_secret_key: "{{ lookup('env','SECRET_KEY') }}"
-        key_name: user_ANSIBLE_TOWER
+        key_name: 
         instance_type: t2.micro
-        image: ami-0f2b4fc905b0bd1f1
+        image: 
         count: 1
-        vpc_subnet_id: subnet-b22b54c8
+        vpc_subnet_id: 
         region: us-east-2
         wait: yes
         assign_public_ip: yes
