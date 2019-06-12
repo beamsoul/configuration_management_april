@@ -1,10 +1,10 @@
 ---
-- name: Installs 1 packages
+- name: Installs 1 package
   hosts: all
   tasks:
     - name: install 1 package
       package:
         name: httpd
-        state: present 
+        state: present
       become: yes
       become_method: sudo
