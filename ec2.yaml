@@ -6,8 +6,6 @@
   tasks:
    - name: Provision a set of instances  
      ec2:  
-        aws_access_key: AKIAXFXYEXB5TBPAT7S5
-        aws_secret_key: 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
         key_name: "{{key_name}}"
         instance_type: "{{instance_type}}"
         image: "{{centos7_image}}"
