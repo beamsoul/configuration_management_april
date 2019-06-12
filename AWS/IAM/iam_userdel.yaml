@@ -1,0 +1,9 @@
+---
+- name: IAM user remove
+  hosts: localhost
+  tasks:
+    - name: IAM user remove
+      iam:
+        iam_type: user
+        name: "{{ name }}"                    # Type name of the user
+        state: absent     

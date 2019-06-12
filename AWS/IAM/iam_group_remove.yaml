@@ -1,0 +1,9 @@
+---
+- name: IAM group add
+  hosts: localhost
+  tasks:
+    - name: IAM group add 
+      iam:
+        iam_type: group
+        name: "{{ name }}"                    # Type name of the group
+        state: absent   

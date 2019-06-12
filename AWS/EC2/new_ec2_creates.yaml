@@ -1,0 +1,66 @@
+--- #sudo pip install boto
+- name: Creates ec2 instances
+  hosts: localhost
+  vars_files:
+    - ec2_vars
+  tasks:
+    - name: Creates CentOS7 instance
+      ec2:
+        key_name: "{{key_name}}"      # All these {---} curly bracek values are in ec2_vars
+        instance_type: "{{instance_type}}"
+        image: "{{centos7_image}}"
+        count: "{{count}}"
+        vpc_subnet_id: "{{vpc_subnet_id}}"
+        region: "{{region}}"
+        instance_tags:
+          Name: Centos_7-{{ item }}  # it will name Centos_7-   and given the range specified in below command
+        assign_public_ip: yes
+        wait: yes
+      loop: "{{ range(1, 5 + 1)| list }}"  # it loops 1 to 5 and increases the number 1 by 1
+      
+      
+
+
+  # vars_files:
+  #   - ec2_vars_Fedora_GNU
+    - name: Creates Fedora instance
+      ec2:
+        key_name: "{{key_name}}"      
+        instance_type: "{{instance_type}}"
+        image: "{{fedora_image}}"
+        count: "{{count}}"
+        vpc_subnet_id: "{{vpc_subnet_id}}"
+        region: "{{region}}"
+        instance_tags:
+          Name: Fedora-{{ item }}
+        assign_public_ip: yes
+        wait: yes
+        user_data:
+          #!/bin/sh
+          sudo apt-get install python -y
+          sudo pip install boto
+      loop: "{{ range(1, 3 + 1)| list }}"
+      
+      
+      
+
+
+  # vars_files:
+  #   - ec2_vars_CentOS_6
+    - name: Creates CentOS_6 instance
+      ec2:
+        key_name: "{{key_name}}"      
+        instance_type: "{{instance_type}}"
+        image: "{{centos6_image}}"
+        count: "{{count}}"
+        vpc_subnet_id: "{{vpc_subnet_id}}"
+        region: "{{region}}"
+        instance_tags:
+          Name: CentOS_6-{{ item }}
+        assign_public_ip: yes
+        wait: yes
+        user_data:
+          #!/bin/sh
+          sudo apt-get install python -y
+          sudo pip install boto
+      loop: "{{ range(1, 2 + 1)| list }}"

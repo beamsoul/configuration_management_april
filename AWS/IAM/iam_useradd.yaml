@@ -1,0 +1,10 @@
+---
+- name: IAM user add
+  hosts: localhost
+  tasks:
+    - name: IAM user add with password (console access) 
+      iam:
+        iam_type: user
+        name: "{{ name }}"                    # Type name of the user
+        state: present                      
+        password: "{{ password }}"            # Create user password
