@@ -1,0 +1,11 @@
+key_name: "user_ANSIBLE_TOWER"
+instance_type: "t2.micro"
+count: "1"
+vpc_subnet_id: "subnet-b22b54c8"
+region: "us-east-2"
+
+centos6_image: "ami-0a4e0492247630fe1"
+centos7_image: "ami-0f2b4fc905b0bd1f1"
+debian_image: "ami-067e80109aff3e2c2"
+fedora_image: "ami-002394f4b972f0aeb"
+ubuntu_image: "ami-0d0b9ea2efef113f9"

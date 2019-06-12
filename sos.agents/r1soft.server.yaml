@@ -1,0 +1,27 @@
+---
+- name: Install r1soft server
+  hosts: backup_server 
+  become: yes
+  become_method: sudo
+  tasks:
+    # This line for CentOS 7
+    - block:        
+      - name: Create Repository
+        copy:
+          src: r1soft.repo
+          dest: /etc/yum.repos.d/r1soft.repo
+
+      - name: Install r1soft server
+        package:
+          name: serverbackup-enterprise
+          state: latest
+        notify: R1SOFT_INSTALLED_ON_CENTOS_7
+
+    - name: Restart r1soft server
+      shell: "/etc/init.d/cdp-server restart"
+
+  handlers:
+    - name: R1SOFT_INSTALLED_ON_CENTOS_7
+      systemd:
+         name: sbm-server
+         state: restarted

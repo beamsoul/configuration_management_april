@@ -1,0 +1,19 @@
+--- #sudo pip install boto
+- name: Creates ec2 instances
+  hosts: localhost
+  tasks:
+    - name: Create muliple instances
+      ec2:
+        aws_access_key: "{{ lookup('env','ACCESS_KEY') }}"
+        aws_secret_key: "{{ lookup('env','SECRET_KEY') }}"
+        key_name: user_ANSIBLE_TOWER
+        instance_type: t2.micro
+        image: ami-0f2b4fc905b0bd1f1
+        count: 1
+        vpc_subnet_id: subnet-b22b54c8
+        region: us-east-2
+        wait: yes
+        assign_public_ip: yes
+        instance_tags:
+          Name: Instance-{{ item }}
+      loop: "{{ range(0, 4 + 1)| list }}"
