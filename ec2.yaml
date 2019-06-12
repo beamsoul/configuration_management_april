@@ -3,19 +3,21 @@
   hosts : localhost
   vars_files:
     - ec2_vars
-  tasks: 
-  - name: Creates Centos7
-    ec2: 
-      key_name: "{{key_name}}"
-      instance_type: "{{instance_type}}"
-      image: "{{centos7_image}}"
-      count: "{{count}}"
-      vpc_subnet_id: "{{vpc_subnet_id}}"
-      region: "{{region}}"
-      assign_public_ip: yes
+  tasks:
+- name: Provision a set of instances  
+  ec2:  
+        aws_access_key: AKIAIHGBMLWPKLQJ43KA
+        aws_secret_key: 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    
+        key_name: "{{key_name}}"
+        instance_type: "{{instance_type}}"
+        image: "{{centos7_image}}"
+        count: "{{count}}"
+        vpc_subnet_id: "{{vpc_subnet_id}}"
+        region: "{{region}}"
+        assign_public_ip: yes
     
-  - name:  Creates Centos6
-    ec2:
+- name:  Creates Centos6
+  ec2:
       key_name: "{{key_name}}"
       instance_type: "{{instance_type}}"
       image: "{{centos6_image}}"
