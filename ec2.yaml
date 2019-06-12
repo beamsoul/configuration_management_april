@@ -4,8 +4,8 @@
   vars_files:
     - ec2_vars
   tasks:
-- name: Provision a set of instances  
-  ec2:  
+   - name: Provision a set of instances  
+     ec2:  
         aws_access_key: AKIAIHGBMLWPKLQJ43KA
         aws_secret_key: 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    
         key_name: "{{key_name}}"
