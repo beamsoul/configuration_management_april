@@ -1,0 +1,10 @@
+---
+- name: creates and deletes s3 bucket
+  hosts: localhost
+  tasks:
+- name:   s3 management 
+  aws_s3:
+    bucket: "{{bucket}}"
+    mode:   "{{mode}}"
+    region: "{{region}}"
+    
