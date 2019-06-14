@@ -8,7 +8,7 @@
       ec2:
         key_name:   ansible-tower  
         instance_type: t2.micro
-        image: ami-0f2b4fc905b0bd1f1
+        image: 
         count: 3
         vpc_subnet_id: subnet-1c871974 
         region: ca-central-1
@@ -18,37 +18,23 @@
         assign_public_ip: yes
 
 
-    - name: Creates Debian instance
-      ec2:
-        key_name:  ansible-tower    
-        instance_type: t2.micro
-        image: ami-067e80109aff3e2c2
-        count: 3
-        vpc_subnet_id: subnet-1c871974
-        region: ca-central-1
-        instance_tags:
-          Name: DEBIAN_GNU
-        wait: yes
-        assign_public_ip: yes
-        user_data:
-                  #!/bin/sh
-                  sudo apt-get install python -y
-                  sudo pip install boto
 
 
-    - name: Creates Ubuntu instance
+    - name: Creates CentOS6 instance
       ec2:
-        key_name: user_ANSIBLE_TOWER      
+        key_name:   ansible-tower  
         instance_type: t2.micro
-        image: ami-0d0b9ea2efef113f9
+        image: ami-085d04643277add4a
         count: 3
-        vpc_subnet_id: subnet-1c871974
+        vpc_subnet_id: subnet-1c871974 
         region: ca-central-1
         instance_tags:
-          Name: UBUNTU
+          Name: CentOS6
         wait: yes
         assign_public_ip: yes
-        user_data:
-                  #!/bin/sh
-                  sudo apt-get install python -y
-                  sudo pip install boto
+
+
+   
+
+
+    
