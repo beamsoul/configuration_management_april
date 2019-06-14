@@ -1,8 +1,7 @@
 ---
 - name: Install r1soft agent
   hosts: all
-  become: yes
-  become_method: sudo 
+  become: false
   tasks: 
 # this line is for centos 7
     - block:
