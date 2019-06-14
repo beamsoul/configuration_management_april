@@ -1,0 +1,35 @@
+---
+- name: Install r1soft agent
+  hosts: all
+  become: yes
+  become_method: sudo 
+  tasks: 
+# this line is for centos 7
+    - block:
+      - name: Create a Repository
+        copy:
+          src: r1soft.repo
+          dest: /etc/yum.repos.d/r1soft.repo
+    
+      - name: Install r1soft agent
+        package:
+          name: serverbackup-enterprise-agent 
+          state: present
+        notify: R1SOFT_INSTALLED_ON_CENTOS_7
+
+    
+    
+# this line is for centos 6
+    - block:
+      - name: Create a Repository
+        copy:
+          src: r1soft.repo
+          dest: /etc/yum.repos.d/r1soft.repo
+    
+      - name: Install r1soft agent
+        package:
+          name: serverbackup-enterprise-agent 
+          state: present
+        notify: R1SOFT_INSTALLED_ON_CENTOS_6
+    
+    
