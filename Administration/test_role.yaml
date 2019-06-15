@@ -1,6 +1,6 @@
 ---
 - name: Test playbook for role
-  hosts: localhost
+  hosts: all
   become: yes
   become_user: sudo 
   roles: 
