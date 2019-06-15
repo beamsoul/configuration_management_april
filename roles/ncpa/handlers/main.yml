@@ -1,2 +1,3 @@
 ---
-# handlers file for ncpa
+- name: restart ncpa
+  systemd: name=ncpa state=restarted
