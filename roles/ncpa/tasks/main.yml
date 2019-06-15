@@ -1,2 +1,20 @@
 ---
-# tasks file for ncpa
+    - name: Create repo on centos 7 
+      when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+      package: 
+        name: "http://repo.nagios.com/nagios/7/nagios-repo-7-3.el7.noarch.rpm"
+        state: latest
+
+    - name: Install ncpa on centos 7
+      when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+      package:
+        name: ncpa
+        state: present
+      notify: NCPA_CENTOS_7
+
+    - name: Change the code inside ncpa.cfg
+      when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7" 
+      lineinfile:
+        path: /usr/local/ncpa/etc/ncpa.cfg
+        regexp: "community_string = mytoken"
+        line: "community_string = STRONGPASSWORD"
