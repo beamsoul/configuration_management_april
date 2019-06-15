@@ -1,9 +1,8 @@
 ---
-- name: Test playbook for role
-  tasks:
+- name: Test playbook for role 
   hosts: localhost
   become: yes
-  become_user: root 
-  roles: 
-    - package 
+  become_user: root
+  roles:
+    - package
     - wordpress
