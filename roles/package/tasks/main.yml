@@ -1,6 +1,7 @@
 ---
 # tasks file for package
 - name: Install package from role
-  package: httpd
-  state: present 
-  
+  package: 
+    name: httpd
+    state: present
+
