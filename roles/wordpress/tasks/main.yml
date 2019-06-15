@@ -5,14 +5,14 @@
     state: latest
   with_items:
       - wget
-        - unzip
-        - php-gd
-        - httpd
-        - mysql
-        - mariadb-server
-        - php 
-        - php-mysql
-        - php-fpm
+      - unzip
+      - php-gd
+      - httpd
+      - mysql
+      - mariadb-server
+      - php 
+      - php-mysql
+      - php-fpm
   ignore_errors: true
 
 - name: Download wordpress package
@@ -38,7 +38,7 @@
 - name: Restart httpd 
   systemd: 
     name: httpd
-    state: started
+    state: stopped
     enabled: yes
   become: yes
   become_method: sudo
