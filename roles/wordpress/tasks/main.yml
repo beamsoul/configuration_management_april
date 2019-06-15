@@ -42,4 +42,4 @@
    enabled: yes
    become: yes
    become_method: sudo
-   when: myvalue.stdout == "running"
+  
