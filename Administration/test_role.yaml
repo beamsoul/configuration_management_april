@@ -2,6 +2,7 @@
 - name: Test playbook for role
   hosts: localhost
   become: yes
-  become_user: sudo 
+  become_user: root 
   roles: 
     - package 
+    - wordpress
