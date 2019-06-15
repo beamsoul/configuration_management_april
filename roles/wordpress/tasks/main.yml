@@ -38,7 +38,7 @@
 - name: Restart httpd 
   systemd: 
    name: httpd
-   state: restarted
+   state: started
    enabled: yes
    become: yes
    become_method: sudo
