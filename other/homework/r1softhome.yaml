@@ -1,6 +1,6 @@
 ---
 - name: Install r1soft agent
-  hosts: hosts
+  hosts: all
   become: false
   tasks: 
     - block:
