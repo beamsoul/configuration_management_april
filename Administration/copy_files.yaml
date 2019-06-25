@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  tasks:
-    - name: Copy files
-      copy:
-        src: /tmp/test
-        dest: /tmp/somefile
-      become: yes
-      become_method: sudo

@@ -1,9 +1,0 @@
-- name: Creates Internet Gateway (igw)
-  hosts: localhost
-  tasks:
-    - name: Creating igw
-      ec2_vpc_igw:
-        vpc_id: "{{vpc_id}}"                    # Add VPC ID
-        state: present
-        region: "{{region}}"                    # Add region
-      register: igw

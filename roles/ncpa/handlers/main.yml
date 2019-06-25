@@ -1,4 +1,0 @@
----
-- name: restart ncpa
-  systemd: name=ncpa state=restarted
-  

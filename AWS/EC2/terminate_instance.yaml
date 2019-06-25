@@ -1,9 +1,0 @@
----
-- name: Terminate Instances
-  hosts: localhost
-  tasks:
-    - name: Terminate instances
-      ec2:
-        instance_ids: "{{instance_ids}}"
-        state: "{{state}}" #stopped  #started
-        region: "{{region}}"

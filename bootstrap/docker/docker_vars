@@ -1,6 +1,0 @@
-key_name:  "ansible-tower"
-instance_type: "t2.micro"
-image: ami-033e6106180a626d0
-count: 1
-vpc_subnet_id:subnet-1c871974
-region: ca-central-1
