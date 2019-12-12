@@ -1,0 +1,17 @@
+---
+- name: User management 
+  hosts: localhost
+  become: yes 
+  become_method: sudo 
+  ignore_errors: true 
+  tasks: 
+    - name: Add users to a system 
+      user:
+        name: "{{item}}"
+        state: present 
+      with_items:
+        - curt 
+        - chris 
+        - audrey 
+        - nataliya 
+        
