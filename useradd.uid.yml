@@ -1,0 +1,21 @@
+--- 
+- name: User Management 
+  hosts: localhost 
+  become: yes
+  become_method: sudo 
+  ignore_errors: true 
+  tasks:
+    - name: Add users to a system 
+      user: 
+        name: "{{item}}"
+        state: present 
+        uid: 10100
+        group: admin 
+        generate_ssh_key: yes
+        expires: -1 
+        shell: /bin/bash
+      with_items: 
+         - brian 
+         - janna 
+         
+        
