@@ -1,0 +1,11 @@
+---
+- name: User management 
+  hosts: localhost
+  become: yes
+  become_method: sudo 
+  tasks: 
+    - name: Add Lisa to a system 
+      user:
+        name: lisa 
+        state: present 
+        
