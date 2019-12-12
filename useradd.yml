@@ -8,4 +8,13 @@
       user:
         name: lisa 
         state: present 
+    - name: Add Brian to a system 
+      user:
+        name: Brian
+        state: present
+    - name : Add Janna to a system 
+      user: 
+        name: Janna 
+        state: present 
+        
         
