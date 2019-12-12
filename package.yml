@@ -1,0 +1,11 @@
+---
+- name: installs 1 package 
+  hosts: localhost
+  tasks: 
+    - name: Install 1 package 
+      package:
+        name: http
+        state: present 
+      become: yes
+      become_method: sudo 
+        
