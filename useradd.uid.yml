@@ -15,7 +15,7 @@
         expires: -1 
         shell: /bin/bash
       with_items: 
-         - brian 
-         - janna 
-         
+         - Brian 
+         - Janna 
+
         
