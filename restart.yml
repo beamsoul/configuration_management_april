@@ -4,7 +4,7 @@
     - name: OS_TYPE
       prompt: "What OS to restart?"
       private: no
-  hosts: localhosts
+  hosts: localhost
   tasks:
     - name: Restarts 
       when: ansible_distribution == "{{OS_TYPE}}"
