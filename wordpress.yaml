@@ -18,7 +18,7 @@
         - httpd 
         - mysql
         - mariadb-server
-        - php 
+        - php56 
         - php-mysql
         - php-fpm 
       ignore_errors: true 
