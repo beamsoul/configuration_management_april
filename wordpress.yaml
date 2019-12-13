@@ -25,7 +25,7 @@
 
     - name: Download wordpress package
       get_url:
-        url: "https://wordpress.org/latest.tar.gz"
+        url: "https://wordpress.org/wordpress-5.3.1.tar.gz"
         dest: /tmp/
 
     - name: unzip wordpress file 
@@ -36,7 +36,7 @@
       become: yes
       become_method: sudo 
 
-    - name: Move files to html
+    - name: Move files to html folder
       shell: "mv/var/www/html/wordpress/* /var/www/html"  
       become: yes
       become_method: sudo 
