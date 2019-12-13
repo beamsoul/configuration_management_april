@@ -1,4 +1,4 @@
----
+--- # ansible requires boto3 #sudo pip install boto
 - name: Create ec2 instance
   hosts: localhost
   tasks:
@@ -9,3 +9,4 @@
         image: ami-074e2d6769f445be5
         count: 3
         vpc_subnet_id: subnet-bfe913d9
+        region: us-west-1
