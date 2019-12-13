@@ -8,5 +8,5 @@
         instance_type: t2.micro 
         image: ami-074e2d6769f445be5
         count: 3
-        vpc_subnet_id: subnet-bfe913d9
+        vpc_subnet_id: vpc-770f0410
         region: us-west-1
