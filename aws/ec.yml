@@ -2,11 +2,11 @@
 - name: Create ec2 instance
   hosts: localhost
   tasks:
-    - name: Creates ec2 instances
+    - name: Creates  instances
       ec2:
         key_name: local
         instance_type: t2.micro 
         image: ami-074e2d6769f445be5
         count: 3
-        vpc_subnet_id: vpc-770f0410
+        vpc_subnet_id: subnet-a76a7cfc
         region: us-west-1
