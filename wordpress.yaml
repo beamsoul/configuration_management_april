@@ -30,8 +30,8 @@
 
     - name: unzip wordpress file 
       unarchive:
-        src: "/tmp/"
-        dest: /var/www/html/  
+        src: "/tmp/latest.tar.gz"
+        dest: /var/www/html/wordpress  
       become: yes
       become_method: sudo 
 
