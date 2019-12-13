@@ -26,11 +26,11 @@
     - name: Download wordpress package
       get_url:
         url: "https://wordpress.org/latest.tar.gz"
-        dest: /tmp/https://wordpress.org/latest.tar.gz
+        dest: /tmp/
 
     - name: unzip wordpress file 
       unarchive:
-        src: "/tmp/https://wordpress.org/latest.tar.gz"
+        src: "/tmp/"
         dest: /var/www/html/  
       become: yes
       become_method: sudo 
