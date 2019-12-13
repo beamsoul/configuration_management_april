@@ -1,13 +1,11 @@
 ---
 - hosts: localhost
   tasks: 
-    - name: Updates a kernel to latest 
-      when: ansible_distribution == "centOs" 
+    - name: Updates a kernel to latest
       package:
         name: kernel 
         state: latest 
       become: yes
       become_method: sudo 
     - name: restart the system 
-      when: ansible_distribution == "centOS"  
-      reboot: 
+      reboot:
