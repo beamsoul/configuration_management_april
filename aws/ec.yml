@@ -4,9 +4,9 @@
   tasks:
     - name: Creates  instances
       ec2:
-        key_name: local
+        key_name: work-mac-key
         instance_type: t2.micro 
-        image: ami-074e2d6769f445be5
+        image: ami-0c5204531f799e0c6
         count: 3
-        vpc_subnet_id: subnet-a76a7cfc
-        region: us-west-1
+        vpc_subnet_id: subnet-9d3120e4
+        region: us-west-2
