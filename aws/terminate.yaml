@@ -6,4 +6,5 @@
       ec2: 
         instance_ids: i-026a167065e318a34
         state: absent  #stopped #started
+        region: us-east-
 
