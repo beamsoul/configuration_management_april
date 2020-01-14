@@ -10,8 +10,8 @@
         name: "{{item}}"
         state: present 
       with_items:
-        - curt 
-        - chris 
-        - audrey 
-        - nataliya 
+        - joel
+        - janna
+        - joe
+        - josh
         
