@@ -5,8 +5,8 @@
     - name: Creates  instances
       ec2:
         key_name: work-mac-key
-        instance_type: t2.micro 
+        instance_type: t2.micro  
         image: ami-0c5204531f799e0c6
-        count: 3
-        vpc_subnet_id: subnet-9d3120e4
+        count: 1
+        vpc_subnet_id: subnet-dee619b8
         region: us-west-2
