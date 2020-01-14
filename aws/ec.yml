@@ -4,9 +4,9 @@
   tasks:
     - name: Creates  instances
       ec2:
-        key_name: work-mac-key
+        key_name: ansible-private 
         instance_type: t2.micro  
-        image: ami-0c5204531f799e0c6
+        image: ami-03caa3f860895f82e
         count: 1
         vpc_subnet_id: subnet-dee619b8
         region: us-west-2
